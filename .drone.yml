@@ -1,8 +1,7 @@
 pipeline:
   build:
-    image: golang
+    image: golang:1.11-alpine
     commands:
       - go get
       - go build
       - go test
-

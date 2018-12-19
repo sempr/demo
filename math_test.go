@@ -15,3 +15,9 @@ func TestSub(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func TestSub2(t *testing.T) {
+	if Sub(1, 1) != 0 {
+		t.Fail()
+	}
+}

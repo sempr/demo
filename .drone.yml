@@ -1,14 +1,9 @@
-kind: pipline
+kind: pipeline
+name: default
 
 steps:
-- name: build
-  image: golang:1.12-alpine
+- name: backend
+  image: golang
   commands:
-    - go get
-    - go build
-    - go test
-trigger:
-  branch:
-  - master
-  event:
-  - push
+  - go build
+  - go test

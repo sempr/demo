@@ -7,3 +7,9 @@ steps:
   commands:
   - go build
   - go test
+
+- name: telegram
+  image: appleboy/drone-telegram
+  token:
+    from_secret: tgtoken
+  to: -303479375

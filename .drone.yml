@@ -13,4 +13,4 @@ steps:
   environment:
     PLUGIN_TOKEN:
       from_secret: tgtoken
-  to: -303479375
+    PLUGIN_TO: -303479375

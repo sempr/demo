@@ -14,3 +14,8 @@ steps:
         from_secret: slack_webhook
       channel: dev
       icon_url: https://unsplash.it/256/256/?random
+  - name: coverage
+    image: plugins/codecov
+    settings:
+      token:
+        from_secret: codecov-token

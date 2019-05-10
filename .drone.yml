@@ -2,16 +2,15 @@ kind: pipeline
 name: default
 
 steps:
-- name: backend
-  image: golang
-  commands:
-  - go build
-  - go test
-
-- name: telegram
-  image: appleboy/drone-telegram
-  environment:
-    PLUGIN_TOKEN:
-      from_secret: tgtoken
-    PLUGIN_TO: "-303479375"
-    PLUGIN_DEBUG: "true"
+  - name: backend
+    image: golang
+    commands:
+      - go build
+      - go test
+  - name: slack
+    image: plugins/slack
+    settings:
+      webhook:
+        from_secret: slack_webhook
+      channel: dev
+      icon_url: https://unsplash.it/256/256/?random

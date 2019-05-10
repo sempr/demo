@@ -10,6 +10,7 @@ steps:
 
 - name: telegram
   image: appleboy/drone-telegram
-  token:
-    from_secret: tgtoken
+  environment:
+    PLUGIN_TOKEN:
+      from_secret: tgtoken
   to: -303479375

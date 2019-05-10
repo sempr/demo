@@ -21,3 +21,9 @@ func TestSub(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func TestMulti(t *testing.T) {
+	if Multi(3, 4) != 12 {
+		t.Fail()
+	}
+}

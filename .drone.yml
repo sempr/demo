@@ -7,6 +7,14 @@ steps:
     commands:
       - go build
       - go test
+      - go test -race -coverprofile=coverage.txt -covermode=atomic
+  - name: coverage
+    image: plugins/codecov
+    settings:
+      token:
+        from_secret: codecov-token
+      files:
+        - coverage.txt
   - name: slack
     image: plugins/slack
     settings:
@@ -14,8 +22,3 @@ steps:
         from_secret: slack_webhook
       channel: dev
       icon_url: https://unsplash.it/256/256/?random
-  - name: coverage
-    image: plugins/codecov
-    settings:
-      token:
-        from_secret: codecov-token

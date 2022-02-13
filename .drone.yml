@@ -25,6 +25,5 @@ steps:
     when:
       event:
         - promote
-        target:
+      target:
         - production
-
